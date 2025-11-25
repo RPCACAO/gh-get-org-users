@@ -1,4 +1,4 @@
-# Get All Organization Users Using GitHub CLI
+# Get All Organization Users Using GitHub CLI and Find if any are compromised by "SHA1-Hulud: The Second Coming."
 Quick &amp; dirty bash script that utilizes GitHub CLI to get users from organizations.
 
 ## About
@@ -37,5 +37,15 @@ Included also is the ability to generate a list of organizations that the authen
     ```
 5. View the generated `.csv` file (the script will output the file name). The users will be listed by login and email address.
 
+6. Execute the sha1-hulud checker script pointing it to a list of only user names (output of get-all-users.sh after I altered it)
+    ```
+    sh get-all-users.sh -f <file-path>
+    ```
+8. Check the output file `all_sha1repos*.json` for any compromised user in your organization
+
+
 ## Caveats
 - Users who mark their email address as "private" will have no email address show up.
+
+## Credits
+- Massive thanks to Samuel Mello for the original get all users from organization script. My job was a lot easier thanks to him
