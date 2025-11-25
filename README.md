@@ -37,7 +37,12 @@ Included also is the ability to generate a list of organizations that the authen
     ```
 5. View the generated `.csv` file (the script will output the file name). The users will be listed by login and email address.
 
-6. Execute the sha1-hulud checker script pointing it to a list of only user names (output of get-all-users.sh after I altered it)
+6. Generate a github Personal Access Token to increase your API limit and insert it in the script 
+    ```
+    Line 90:
+    RESULT=$(curl -s -u <username>:<personal_access_token> https://api.github.com/users/${USERNAME}/repos)
+    ```
+7. Execute the sha1-hulud checker script pointing it to a list of only user names (output of get-all-users.sh after I altered it)
     ```
     sh get-all-users.sh -f <file-path>
     ```
